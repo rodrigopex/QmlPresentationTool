@@ -16,5 +16,10 @@
         <file>assets/images/mexico.jpg</file>
         <file>js/FormatText.js</file>
         <file>qml/presentation/FullImage.qml</file>
+        <file>assets/images/qt.png</file>
+        <file>assets/images/qt_modules.png</file>
+        <file>assets/images/qt_logo.png</file>
+        <file>assets/images/qt_tree.png</file>
+        <file>assets/images/qt_exercicio_01.png</file>
     </qresource>
 </RCC>

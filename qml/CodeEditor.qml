@@ -9,6 +9,7 @@ Item {
     id: self
     property string codeId
     property alias code: documentHandler.text
+    anchors.fill: parent
     Action {
         property alias textPointSize: editor.font.pointSize
         shortcut: StandardKey.ZoomIn

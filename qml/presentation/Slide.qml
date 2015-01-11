@@ -119,6 +119,7 @@ Item {
         horizontalAlignment: Text.Center
         font.pixelSize: baseFontSize
         font.family: slide.fontFamily
+        textFormat: Text.RichText
         color: slide.textColor
         wrapMode: Text.Wrap
     }

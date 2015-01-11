@@ -114,10 +114,10 @@ Item {
         if (root.currentSlide - 1 >= 0) {
             var from = slides[currentSlide]
             var to = slides[currentSlide - 1]
-           if (switchSlides(from, to, false)) {
+            if (switchSlides(from, to, false)) {
                 currentSlide = currentSlide - 1;
-               root.focus = true;
-           }
+                root.focus = true;
+            }
         }
     }
 
@@ -130,10 +130,23 @@ Item {
         else if (root.currentSlide != _userNum) {
             var from = slides[currentSlide]
             var to = slides[_userNum]
-           if (switchSlides(from, to, _userNum > currentSlide)) {
+            if (switchSlides(from, to, _userNum > currentSlide)) {
                 currentSlide = _userNum;
-               root.focus = true;
-           }
+                root.focus = true;
+            }
+        }
+    }
+
+    function goToSlide(slideNum) {
+        if (root._faded || slideNum < 0 || slideNum >= root.slides.length)
+            return
+        else if (root.currentSlide !== slideNum) {
+            var from = slides[currentSlide]
+            var to = slides[slideNum]
+            if (switchSlides(from, to, slideNum > currentSlide)) {
+                currentSlide = slideNum;
+                root.focus = true;
+            }
         }
     }
 
@@ -173,7 +186,6 @@ Item {
     Action {
         shortcut: "Ctrl+Shift+ALT+backspace"
         onTriggered: {
-            console.log("clear")
             messageDialog.open()
         }
     }
@@ -182,6 +194,18 @@ Item {
         onTriggered: {
             fileDialog.open()
         }
+    }
+    Item {
+        width: 60
+        height: 60
+        z: 998
+    Image {
+        anchors.margins: 5
+        anchors.fill: parent
+
+        source: "qrc:/assets/images/qt_logo.png"
+        fillMode: Image.PreserveAspectFit
+    }
     }
     MessageDialog {
         id: messageDialog
@@ -210,15 +234,16 @@ Item {
         }
     }
     ListView {
+        id: shortcutList
         z: 999
         height: 400 //parent.height
-        width: 200
+        width: 320
         opacity: mArea.containsMouse
         enabled: false
         header: Rectangle {
-            width: 320 //content.contentWidth*1.3
+            width: shortcutList.width
             height: content.contentHeight*1.3
-            color: "#44000000"
+            color: "#33FFFFFF"
             Text {
                 id: content
                 text: "Shortcuts"
@@ -228,7 +253,7 @@ Item {
                 anchors.centerIn: parent
             }
             Rectangle {
-                color: "#22000000"
+                color: "#33FFFFFF"
                 width: parent.width
                 height: 1
             }
@@ -240,6 +265,7 @@ Item {
             }
         }
         model: [
+            "C : Show questions screen",
             "CTRL+SHIFT+F : Full screen",
             "ESC : Exit full screen",
             "ALT+/ : Question mode",
@@ -248,18 +274,103 @@ Item {
         ]
         delegate: Rectangle {
             width: 320 //content.contentWidth*1.3
-            height: content.contentHeight*1.3
-            color: "#22000000"
+            height: contentSCList.contentHeight*1.3
+            color: "#99000000"
             Text {
-                id: content
+                id: contentSCList
                 text: modelData
                 color: "white"
                 anchors.centerIn: parent
             }
             Rectangle {
-                color: "#22000000"
+                color: "#44000000"
                 width: parent.width
                 height: 1
+            }
+        }
+    }
+    Item {
+        width: parent.width * 0.1
+        height: parent.height
+        anchors.right: parent.right
+        MouseArea {
+            id: mAreaSlides
+            anchors.fill: parent
+            hoverEnabled: true
+        }
+    }
+    ListView {
+        id: slideList
+        z: 999
+        height: parent.height
+        width: 250
+        anchors.right: root.right
+        opacity: mAreaSlides.containsMouse
+        enabled: mAreaSlides.containsMouse
+        header: Rectangle {
+            width: slideList.width
+            height: contentSlide.contentHeight*1.3
+            color: "#33FFFFFF"
+            Text {
+                id: contentSlide
+                text: "Slides"
+                font.bold: true
+                font.capitalization: Font.AllUppercase
+                color: "white"
+                anchors.centerIn: parent
+            }
+            Rectangle {
+                color: "#33FFFFFF"
+                width: parent.width
+                height: 1
+            }
+        }
+        Behavior on opacity {
+            NumberAnimation {
+                duration: 1000
+                easing.type: Easing.OutQuint
+            }
+        }
+        model: root.slides
+        delegate: Rectangle {
+            id: item
+            width: 320 //content.contentWidth*1.3
+            height: contentSlide2.contentHeight*1.5
+            color: root.currentSlide == index || slideListTouch.pressed ? "#ff000000" : "#99000000"
+            Row {
+                anchors.verticalCenter: item.verticalCenter
+                spacing: 5
+                Rectangle {
+                   width: 20
+                   height: item.height
+                   Text {
+                       text: index
+                       anchors.centerIn: parent
+                       color: "white"
+                   }
+                   color: "#22FFFFFF"
+                }
+                Text {
+                    id: contentSlide2
+                    anchors.verticalCenter: parent.verticalCenter
+                    anchors.leftMargin: 5
+                    text: modelData["title"]
+                    color: "white"
+                    //anchors.centerIn: parent
+                }
+            }
+            Rectangle {
+                color: "#44000000"
+                width: parent.width
+                height: 1
+            }
+            MouseArea {
+                id: slideListTouch
+                anchors.fill: parent
+                onClicked: {
+                    root.goToSlide(index)
+                    //slideList.currentIndex = index
+                }
             }
         }
     }
