@@ -373,6 +373,7 @@ ApplicationWindow {
                 "O que significa <i>property binding</i>? Como funciona?"
             ]
         }
+        /*TODO: aproveitar esse trecho
         Slide {
             title: "Qt Creator - introdução rápida"
             content: [
@@ -380,7 +381,7 @@ ApplicationWindow {
                 "Criar um arquivo QML",
                 "Executar o projeto"
             ]
-        }
+        }*/
 
         Slide {
             title: "Qt Quick - Exercício 01"
@@ -391,6 +392,128 @@ ApplicationWindow {
             ]
             SideImage {
                 source: "qrc:/assets/images/qt_exercicio_01.png"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Solução 01"
+            CodeEditor {
+                codeId: "Solucao01"
+            }
+        }
+
+        Slide {
+            title: "Qt Quick - Conceitos básicos de Qt"
+            content: [
+                "Todo elemento é um objeto e herda de QObject",
+                "Todo QObject possui a relação Pai-Filho",
+                "O objeto pai em QML é obtido através do id parent",
+                "Todo objeto pode ter métodos - aqui funções de JavaScript",
+                "console.log é uma função usada para debug"
+            ]
+        }
+        Slide {
+            title: "Qt Quick - Exemplo 04"
+            CodeEditor {
+                codeId: "Exemplo04"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Conceitos básicos de Qt"
+            content: [
+                "Signals e slots",
+                " Comunicação entre objetos",
+                " Acontece de forma assíncrona, facilita o uso de threads",
+                " 1 signal pode ser ligado a n signals e n slots ao mesmo tempo",
+                "",
+                "MouseArea - Componente que possibilita receber eventos do mouse",
+                "Ao ser construído um elemento emite o sinal Component.completed()"
+            ]
+        }
+        Slide {
+            title: "Qt Quick - Exemplo 05"
+            CodeEditor {
+                codeId: "Exemplo05"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Conceitos básicos de Qt"
+            content: [
+                "Então como se dá o <i>binding</i> de propriedades? Alguma idéia?",
+                "O escopo de uma variável é por arquivo no elemento raíz",
+                "Para acessar propriedades de outros objetos será necessário sempre usar o id",
+                "A ordem não interfere no escopo, apenas na visibilidade",
+                "Elementos criados depois serão colocados mais acima dos posteriores",
+                " Imagine uma pilha de elementos"
+            ]
+        }
+        Slide {
+            title: "Qt Quick - Exemplo 06"
+            CodeEditor {
+                codeId: "Exemplo06"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Layouts"
+            content: [
+                " <i>Anchor-based Layouts</i>",
+                " Tradicionais Row, Column e Grid",
+                " Sistema de ancoragem",
+                "  left, right, top, bottom",
+                "  fill, centerIn, baseline",
+                "  verticalCenter, horizontalCenter"
+            ]
+            SideImage {
+                source: "qrc:/assets/images/anchors.png"
+                caption: "Ancoragens possíveis"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Exemplo 07"
+            CodeEditor {
+                codeId: "Exemplo07"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Exemplo 08"
+            CodeEditor {
+                codeId: "Exemplo08"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Layouts margens"
+            content: [
+                " Margens para uma ancoragem",
+                " topMargin, bottomMargin",
+                " leftMargin, rightMargin",
+                " margins"
+            ]
+            SideImage {
+                source: "qrc:/assets/images/margins.png"
+                caption: "Ancoragens possíveis"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Exemplo 09"
+            CodeEditor {
+                codeId: "Exemplo09"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Exercício 02"
+            content: [
+                "Recrie o Item",
+                "Use anchors",
+                "Use apenas Rectangles",
+                ""
+            ]
+            SideImage {
+                source: "qrc:/assets/images/qt_exercicio_02.svg"
+            }
+        }
+        Slide {
+            title: "Qt Quick - Solução 02"
+            CodeEditor {
+                codeId: "Solucao02"
             }
         }
     }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 400 400" enable-background="new 0 0 400 400" xml:space="preserve">
+<rect fill="#FAFAFA" width="400" height="400"/>
+<rect fill="#262626" width="400" height="400"/>
+<rect x="16.76" y="16.76" fill="#FAFAFA" width="366.48" height="366.48"/>
+<g>
+	<rect x="34.23" y="144.64" fill="#C80000" width="36.72" height="36.72"/>
+	<rect x="292.33" y="218.64" fill="#0000C8" width="73.45" height="36.72"/>
+	<rect x="71.21" y="181.94" fill="#00C800" width="220.34" height="36.72"/>
+	<text transform="matrix(1 0 0 1 46.7333 166.5226)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12">1x</text>
+	<text transform="matrix(1 0 0 1 175.5185 197.8272)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12">6x</text>
+	<text transform="matrix(1 0 0 1 323.1933 240.5216)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12">2x</text>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="199.5" y1="0" x2="199.5" y2="1"/>
+		<line fill="none" stroke="#607D8B" stroke-miterlimit="10" stroke-dasharray="2,2" x1="199.5" y1="3" x2="199.5" y2="398"/>
+		<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="199.5" y1="399" x2="199.5" y2="400"/>
+	</g>
+</g>
+<g>
+	<g>
+		<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="0" y1="200.5" x2="1" y2="200.5"/>
+		<line fill="none" stroke="#607D8B" stroke-miterlimit="10" stroke-dasharray="2,2" x1="3" y1="200.5" x2="398" y2="200.5"/>
+		<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="399" y1="200.5" x2="400" y2="200.5"/>
+	</g>
+</g>
+<text transform="matrix(1 0 0 1 50.617 49.7807)" font-family="'MyriadPro-Regular'" font-size="12">#FAFAFA</text>
+<text transform="matrix(1 0 0 1 50.617 11.7783)" fill="#FFFFFF" font-family="'MyriadPro-Regular'" font-size="12">#262626</text>
+<text transform="matrix(1 0 0 1 67.9209 121.2983)" font-family="'MyriadPro-Regular'" font-size="12">#C80000</text>
+<text transform="matrix(1 0 0 1 240.9941 159.2153)" font-family="'MyriadPro-Regular'" font-size="12">#00C800</text>
+<text transform="matrix(1 0 0 1 324.778 283.3631)" font-family="'MyriadPro-Regular'" font-size="12">#0000C8</text>
+<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="83.21" y1="125.58" x2="67.31" y2="149.43"/>
+<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="258.73" y1="161.05" x2="237.32" y2="187.35"/>
+<line fill="none" stroke="#607D8B" stroke-miterlimit="10" x1="338.23" y1="274.19" x2="335.79" y2="246.67"/>
+<g>
+	<g>
+		<polyline fill="none" stroke="#607D8B" stroke-miterlimit="10" points="365.77,254.36 365.77,255.36 364.77,255.36 		"/>
+		
+			<line fill="none" stroke="#607D8B" stroke-miterlimit="10" stroke-dasharray="1.9972,1.9972" x1="362.77" y1="255.36" x2="36.23" y2="255.36"/>
+		<polyline fill="none" stroke="#607D8B" stroke-miterlimit="10" points="35.23,255.36 34.23,255.36 34.23,254.36 		"/>
+		
+			<line fill="none" stroke="#607D8B" stroke-miterlimit="10" stroke-dasharray="1.9768,1.9768" x1="34.23" y1="252.38" x2="34.23" y2="146.63"/>
+		<polyline fill="none" stroke="#607D8B" stroke-miterlimit="10" points="34.23,145.64 34.23,144.64 35.23,144.64 		"/>
+		
+			<line fill="none" stroke="#607D8B" stroke-miterlimit="10" stroke-dasharray="1.9972,1.9972" x1="37.23" y1="144.64" x2="363.77" y2="144.64"/>
+		<polyline fill="none" stroke="#607D8B" stroke-miterlimit="10" points="364.77,144.64 365.77,144.64 365.77,145.64 		"/>
+		
+			<line fill="none" stroke="#607D8B" stroke-miterlimit="10" stroke-dasharray="1.9768,1.9768" x1="365.77" y1="147.62" x2="365.77" y2="253.37"/>
+	</g>
+</g>
+</svg>

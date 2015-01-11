@@ -6,6 +6,7 @@ ColumnLayout {
     anchors.fill: parent
     property alias source: image.source
     property alias caption: caption.text
+    clip: true
     Item {
         Layout.fillHeight: true
     }
@@ -17,6 +18,7 @@ ColumnLayout {
             width: self.width
             height: self.height
             source: "qrc:/assets/images/qrcode.png"
+            sourceSize: Qt.size(self.width*2, self.height*2)
             fillMode: Image.PreserveAspectFit
             anchors.centerIn: parent
         }

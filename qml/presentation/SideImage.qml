@@ -7,6 +7,7 @@ Item {
     anchors.right: parent.right
     height: parent.height
     width: parent.width/2
+    clip: true
     FullImage {
         id: internalImage
     }

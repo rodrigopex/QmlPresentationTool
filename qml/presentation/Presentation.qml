@@ -196,8 +196,8 @@ Item {
         }
     }
     Item {
-        width: 60
-        height: 60
+        width: parent.height*0.15
+        height: width
         z: 998
     Image {
         anchors.margins: 5

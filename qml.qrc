@@ -21,5 +21,8 @@
         <file>assets/images/qt_logo.png</file>
         <file>assets/images/qt_tree.png</file>
         <file>assets/images/qt_exercicio_01.png</file>
+        <file>assets/images/anchors.png</file>
+        <file>assets/images/margins.png</file>
+        <file>assets/images/qt_exercicio_02.svg</file>
     </qresource>
 </RCC>

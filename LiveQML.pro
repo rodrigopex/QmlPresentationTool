@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick widgets multimedia
+QT += qml quick widgets multimedia svg
 
 #include($$quote(qt-labs-qml-presentation-system)/src/src.pro)
 
