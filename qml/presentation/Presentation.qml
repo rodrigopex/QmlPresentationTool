@@ -43,6 +43,7 @@
 import QtQuick 2.4
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.3
+import QtQuick.Dialogs 1.2
 
 Item {
     id: root
@@ -169,6 +170,35 @@ Item {
         shortcut: "alt+/"
         onTriggered: root._faded = !root._faded;
     }
+    Action {
+        shortcut: "Ctrl+Shift+ALT+backspace"
+        onTriggered: {
+            console.log("clear")
+            messageDialog.open()
+        }
+    }
+    Action {
+        shortcut: "Ctrl+Shift+s"
+        onTriggered: {
+            fileDialog.open()
+        }
+    }
+    MessageDialog {
+        id: messageDialog
+        title: "Limpar códigos"
+        text: "Tem certeza que deseja apagar todos os códigos da apresentação?"
+        icon: StandardIcon.Warning
+        standardButtons: StandardButton.Yes | StandardButton.Abort
+        onYes: _storage.clearAllQml()
+    }
+    FileDialog {
+        id: fileDialog
+        selectFolder: true
+        onAccepted: {
+            console.log("saving...", fileUrl)
+            _storage.exportAllQml(fileUrl)
+        }
+    }
 
     Item {
         width: parent.width * 0.1
@@ -184,8 +214,9 @@ Item {
         height: 400 //parent.height
         width: 200
         opacity: mArea.containsMouse
+        enabled: false
         header: Rectangle {
-            width: 190 //content.contentWidth*1.3
+            width: 320 //content.contentWidth*1.3
             height: content.contentHeight*1.3
             color: "#44000000"
             Text {
@@ -211,10 +242,12 @@ Item {
         model: [
             "CTRL+SHIFT+F : Full screen",
             "ESC : Exit full screen",
-            "ALT+/ : Question mode"
+            "ALT+/ : Question mode",
+            "CTRL+SHIFT+S : Export All QML",
+            "Ctrl+Shift+ALT+backspace : Clear all code data"
         ]
         delegate: Rectangle {
-            width: 190 //content.contentWidth*1.3
+            width: 320 //content.contentWidth*1.3
             height: content.contentHeight*1.3
             color: "#22000000"
             Text {
