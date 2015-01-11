@@ -6,11 +6,13 @@ QT += qml quick widgets multimedia
 
 SOURCES += src/main.cpp \
     src/documenthandler.cpp \
-    src/qmlhighlighter.cpp
+    src/qmlhighlighter.cpp \
+    src/Storage.cpp
 
 HEADERS += \
     src/qmlhighlighter.h \
-    src/documenthandler.h
+    src/documenthandler.h \
+    src/Storage.hpp
 
 RESOURCES += qml.qrc
 

@@ -84,10 +84,9 @@ public:
 
 public Q_SLOTS:
     void setText(const QString &arg);
-    void save(const QString & codeId);
-    void load(const QString & codeId);
-    void clear(const QString & codeId);
-
+    void save(const QString &codeId, const QString &text);
+    void load(const QString &codeId);
+    void clear(const QString &codeId);
 Q_SIGNALS:
     void targetChanged();
     void cursorPositionChanged();

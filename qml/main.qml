@@ -21,6 +21,7 @@ ApplicationWindow {
         Slide {
             title: "Code editor inside presentation"
             CodeEditor {
+                codeId: "slide01"
                 anchors.fill: parent
             }
         }

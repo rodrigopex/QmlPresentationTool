@@ -47,6 +47,7 @@
 #include <QFontMetrics>
 #include <QSettings>
 
+
 DocumentHandler::DocumentHandler()
     : m_target(0)
     , m_doc(0)
@@ -88,28 +89,8 @@ void DocumentHandler::setText(const QString &arg)
     //TODO: continuar!!!
     if (m_text != arg) {
         m_text = arg;
+        //target()->setProperty("text", m_text);
         emit textChanged();
-    }
-}
-
-void DocumentHandler::save(const QString &codeId)
-{
-    QSettings settings;
-    settings.setValue(codeId, m_text);
-}
-
-void DocumentHandler::clear(const QString &codeId)
-{
-    QSettings settings;
-    settings.remove(codeId);
-}
-
-void DocumentHandler::load(const QLatin1String &codeId)
-{
-    QSettings settings;
-    if(settings.contains(codeId)) {
-        this->setText(settings.value(codeId).value<QString>());
-        qDebug() << "Content loaded:" << codeId;
     }
 }
 
@@ -132,7 +113,6 @@ void DocumentHandler::reset()
 {
 
 }
-
 
 QTextCursor DocumentHandler::textCursor() const
 {
@@ -164,3 +144,30 @@ void DocumentHandler::setSelectionEnd(int position)
     m_selectionEnd = position;
 }
 
+void DocumentHandler::save(const QString &codeId, const QString &text)
+{
+    QSettings settings;
+    settings.beginGroup("code");
+    settings.setValue(codeId, text);
+    this->setText(text);
+    qDebug() << "Content saved:" << codeId << m_text;
+}
+
+void DocumentHandler::load(const QString &codeId)
+{
+    QSettings settings;
+    settings.beginGroup("code");
+    QString content = settings.value(codeId).value<QString>();
+    if(content.isEmpty()) {
+        content = "import QtQuick 2.4\n\nRectangle {}";
+    }
+    this->setText(content);
+    qDebug() << "Content loaded:" << codeId << content;
+}
+
+void DocumentHandler::clear(const QString &codeId)
+{
+    QSettings settings;
+    settings.beginGroup("code");
+    settings.remove(codeId);
+}
