@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qml/main.qml</file>
+        <file>Colors.js</file>
+        <file>qml/CodeEditor.qml</file>
+        <file>qml/presentation/OpacityTransitionPresentation.qml</file>
+        <file>qml/presentation/Presentation.qml</file>
+        <file>qml/presentation/Slide.qml</file>
+        <file>qml/presentation/SlideCounter.qml</file>
+        <file>qml/presentation/qmldir</file>
+        <file>qml/presentation/CodeSlide.qml</file>
+        <file>qml/presentation/Clock.qml</file>
+        <file>qml/VideoTest.qml</file>
+        <file>assets/images/qrcode.png</file>
+        <file>qml/presentation/SideImage.qml</file>
+        <file>assets/images/mexico.jpg</file>
+        <file>js/FormatText.js</file>
+        <file>qml/presentation/FullImage.qml</file>
+    </qresource>
+</RCC>
