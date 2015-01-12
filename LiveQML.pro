@@ -20,6 +20,10 @@ RESOURCES += qml.qrc
 
 OTHER_FILES += Colors.js #$$QML_FILES \
 
+ICON = QtMobile101.icns
+macx {
+
+}
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
 
